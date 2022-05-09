@@ -1,3 +1,10 @@
+
+
+
+//MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
 class Song {
     constructor(){
     }
@@ -56,6 +63,7 @@ const loadBiggest = (e)=>{
 }
 
 const init = async ()=>{
+
 
     // const {tracks} = await getTopTracks();
     const tracks = await initSongArray();
