@@ -38,8 +38,11 @@ reggae: saturate(10%);
     margin: 0;
     padding: 0;
     border: 0;
-
+    font-family: 'Roboto Mono', monospace;
+    list-style: none;
 }
+
+/* Header */
 
 header {
     display: flex;
@@ -49,20 +52,64 @@ header {
     background-color: #483CBF
 }
 
-.generos {
-    grid-column-gap: 3rem;
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
+/* Menú Fotografías */
+
+.generos>ul {
+display: flex;
+justify-content: space-around;
+text-align: center;
+margin-left: 20%;
+margin-right: 20%;
+margin-top: 2%;
+}
+
+.menu-gen{
     position: relative;
+    display: inline-block;
+    text-align: center;
 }
 
-.generos>img {
-    width: 200px;
+.gen-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8em;
 }
 
-.menu {
+/* Menú Texto */
+
+.ul-menu {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 30%;
     margin-top: 2.5rem;
+    gap: 5rem;
+    background-color: #483CBF;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: #a4ff38;
 }
+
+/* Estilos Listas */
+
+p:nth-child(odd) {
+    background-color: #cfff96;
+  }
+
+  p{
+      font-size: 16px;
+  }
+
+  h3{
+    font-size: 35px;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  .canciones{
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 2%;
+  }
