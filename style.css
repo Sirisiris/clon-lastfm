@@ -34,3 +34,35 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    padding: 1%;
+    height: 5%;
+    background-color: #483CBF
+}
+
+.generos {
+    grid-column-gap: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    position: relative;
+}
+
+.generos>img {
+    width: 200px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
