@@ -3,9 +3,7 @@
 
 //MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-
-class Song {
+/*class Song {
     constructor(){
     }
 
@@ -72,6 +70,36 @@ const init = async ()=>{
     // console.log(tracks.track);
 
     }
+window.onload = init;*/
 
+/*const musicContainer = document.querySelector('.canciones')
+function fetch(name){
+    fetch(`./music.json${name}`)
+    .then(response => response.json())
+    .then(data => imprimirData(data));
+}
+function fetchCancion(name) {
+    for (let i = 1; i <= name; i++) {
+        fetch(i);
+    }
+}
+function imprimirData(name){
+    const card = document.createElement('p');
+card.classList.add('name');
 
-window.onload = init;
+}
+/*const url ='./music.json/'
+fetch(url)
+.then(Response => Response.json())
+.then(data => {
+let element = document.getElementById('canciones')
+element .innerHTML= `
+<p>${data.name}</p>`;
+console.log(data)
+})*/
+
+const tracksContainer = document.querySelector('.track-container');
+
+fetch('music.json')
+.then(Response => Response.json())
+.then(data => console.log(data))
