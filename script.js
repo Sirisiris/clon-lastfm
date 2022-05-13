@@ -98,8 +98,42 @@ element .innerHTML= `
 console.log(data)
 })*/
 
-const tracksContainer = document.querySelector('.track-container');
+/* Lo que consume la API*/
+
+const canciones = document.querySelector('.canciones');
 
 fetch('music.json')
 .then(Response => Response.json())
 .then(data => console.log(data))
+
+
+/*Story 4 cuando clico*/
+
+/*let rock = document.querySelector(".rock")
+rock.addEventListener("click",listaRock); 
+
+function listaRock (){
+    fetch("music.json")
+    .then (res => res.json())
+    .then (function(data){
+     let html ="";
+     let rockArray = data.filter(song => song.genders.incl)
+     rockArray.forEach(song => {
+     html += `<li><img src="./"</li>`   
+    });
+    document.querySelector(".songs").innerHTML=html;
+    });   
+};*/
+
+/*function cargarJSON(){
+    fetch("music.json")
+     .then(res => res.json())
+     .then(function(data){
+         //Aqui dentro tienes que hacer un for y decirle que tiene que hacer con cada uno de los objetos del array. Tienes que hacer que cree un <li> dentro de una <ol> por cada uo de los objetos del array( el array es data) 
+    for (let i = 0; i < array.length; i++) {
+         data.map ((data)=> ({name:data.name, duration: data.duration}));
+        console.log(cargarJSON);
+        
+    }     
+     });
+}*/
