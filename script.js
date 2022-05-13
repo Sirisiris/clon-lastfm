@@ -98,8 +98,4 @@ element .innerHTML= `
 console.log(data)
 })*/
 
-const tracksContainer = document.querySelector('.track-container');
 
-fetch('music.json')
-.then(Response => Response.json())
-.then(data => console.log(data))
