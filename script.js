@@ -1,3 +1,6 @@
+
+
+
 //MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /*class Song {
@@ -96,13 +99,13 @@ console.log(data)
 })*/
 
 /* Lo que consume la API*/
-
+/*
 const canciones = document.querySelector('.canciones');
 
 fetch('music.json')
 .then(Response => Response.json())
 .then(data => console.log(data))
-
+*/
 
 /*Story 4 cuando clico*/
 
@@ -122,14 +125,34 @@ function listaRock (){
     });   
 };*/
 
-/*function cargarJSON(){
-    fetch("music.json")
+/*
+function cargarLista(){
+    fetch('music.json')
      .then(res => res.json())
      .then(function(data){
          //Aqui dentro tienes que hacer un for y decirle que tiene que hacer con cada uno de los objetos del array. Tienes que hacer que cree un <li> dentro de una <ol> por cada uo de los objetos del array( el array es data) 
     for (let i = 0; i < array.length; i++) {
          data.map ((data)=> ({name:data.name, duration: data.duration}));
-        console.log(cargarJSON);
+        
         
     }     
-     });
+     })}
+     
+     */
+
+const tracksContainer = document.querySelector('.canciones');
+
+fetch('music.json')
+.then(response => response.json())
+.then ((music) => {
+    let listaDeMusica = music.map((music) => {
+        return {artist: music.artist.name,
+        name: music.name,
+    listeners: music.listeners
+    }
+
+    });
+    let showData = JSON.stringify(listaDeMusica);
+    document.querySelector(".canciones").innerHTML = showData;
+})
+
