@@ -95,11 +95,11 @@ margin-top: 2%;
 
 /* Estilos Listas */
 
-p:nth-child(odd) {
+tr:nth-child(odd) {
     background-color: #cfff96;
   }
 
-  p{
+  tr{
       font-size: 16px;
   }
 

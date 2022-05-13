@@ -140,19 +140,26 @@ function cargarLista(){
      
      */
 
-const tracksContainer = document.querySelector('.canciones');
+const tabla = document.querySelector('.canciones');
 
-fetch('music.json')
-.then(response => response.json())
-.then ((music) => {
-    let listaDeMusica = music.map((music) => {
-        return {artist: music.artist.name,
-        name: music.name,
+function traerMusica() {
+    fetch('music.json')
+    .then(response => response.json())
+    .then ((music) => {
+    music.map((music) => {
+        const row = document.createElement('tr');
+        row.innerHTML += `
+        <td>${music.artist.name}</td>
+        <td>${music.name}</td>
+        <td>${music.listeners}</td>`;
+        tabla.appendChild(row);    });
+})
+}
+
+traerMusica();
+/*
+{artista: music.artist.name,
+    songname: music.name,
     listeners: music.listeners
     }
-
-    });
-    let showData = JSON.stringify(listaDeMusica);
-    document.querySelector(".canciones").innerHTML = showData;
-})
-
+    */
