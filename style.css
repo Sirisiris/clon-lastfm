@@ -107,9 +107,21 @@ tr:nth-child(odd) {
     font-size: 35px;
     font-style: italic;
     text-decoration: underline;
+    margin: 1rem 0 1rem 0;
+    text-align: center;
   }
+
   .canciones{
       padding-left: 5%;
       padding-right: 5%;
       padding-top: 2%;
+      margin: 0 auto;
   }
+  tr td a img{
+    background-color: #483CBF;
+    border-radius: 1rem;
+    margin: 0 2rem 0 2rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    text-align: center;
+    position: relative;
+}   
