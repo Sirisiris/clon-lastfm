@@ -151,7 +151,8 @@ function traerMusica() {
         row.innerHTML += `
         <td>${music.artist.name}</td>
         <td>${music.name}</td>
-        <td>${music.listeners}</td>`;
+        <td>${music.listeners}</td>
+        <td><a href="${music.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
         tabla.appendChild(row);    });
 })
 }
