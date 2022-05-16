@@ -1,6 +1,3 @@
-
-
-
 //MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -110,8 +107,7 @@ fetch('music.json')
         tabla.appendChild(rock);
     })
 })
-} 
-
+}
 const hiphopButton = document.getElementById('hiphop');
 hiphopButton.onclick = traerHiphop;
 
@@ -261,7 +257,6 @@ window.onload = function(e){
 /*class Song {
     constructor(){
     }
-
     setItemLi(){
     }
     setItemGroupName(group,url){
