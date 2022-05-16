@@ -42,8 +42,6 @@ reggae: saturate(10%);
     list-style: none;
 }
 
-/* Header */
-
 header {
     display: flex;
     justify-content: left;
