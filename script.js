@@ -28,10 +28,10 @@ const tabla = document.querySelector('.canciones');
 
 traerMusica();*/
 
-const rockButton = document.getElementById('rock');
-rockButton.onclick = traerRock;
+const top10Button = document.getElementById('top10');
+top10Button.onclick = traerTop10;
                   
-function traerRock(){
+function traerTop10(){
     
     tabla.innerHTML="";
 
@@ -40,17 +40,16 @@ function traerRock(){
     .then((music) => {
         const title = document.getElementById('title')
         title.innerHTML = `
-        ////Rock`
-        const rockMusic = music.filter (item => item.genres.includes("rock"))
-        rockMusic.map((cancion) => {
-            const rock = document.createElement('tr');
-            rock.innerHTML = `
+        ////top10`
+        //const top10 = music.listeners.sort(function (a, b) { return b - a; }).slice(0, 9);
+        top10.map((cancion) => {
+            const top10 = document.createElement('tr');
+          top10.innerHTML = `
             <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-         
             <td>${cancion.listeners}</td>`;
-            tabla.appendChild(rock);
+            top10.appendChild(top10);
         })
     })
 } 
@@ -59,29 +58,41 @@ function traerRock(){
 // hiphopButton.onclick = traerHiphop;
                   
 
-/*function traerRock(){
+
+
+
+
+//const valoraciones = [1, 25, 52, 151, 121, 51, 12, 515, 77, 211, 997, 62, 1216, 11, 921];
+/*
+const rockButton = document.getElementById('rock');
+rockButton.onclick = traerRock;
+function traerRock(){
     
     tabla.innerHTML="";
-
-    fetch('music.json')
-    .then (resp => resp.json())
-    .then((music) => {
-        const title = document.getElementById('title')
-        title.innerHTML = `
-        ////Rock`
-        const rockMusic = music.filter (item => item.genres.includes("rock"))
-        rockMusic.map((cancion) => {
-            const rock = document.createElement('tr');
-            rock.innerHTML = `
-            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-            <td>${cancion.artist.name}</td>
-            <td>${cancion.name}</td>
-            <td>${cancion.listeners}</td>`;
-            tabla.appendChild(rock);
-        })
+fetch('music.json')
+.then (resp => resp.json())
+.then((music) => {
+    const title = document.getElementById('title')
+    title.innerHTML = `
+    ////Rock`
+    const rockMusic = music.filter (item => item.genres.includes("rock"))
+    rockMusic.map((cancion) => {
+        const rock = document.createElement('tr');
+        rock.innerHTML = `
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+     
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(rock);
     })
+})
 } 
-/* 
+/*
+
+
+
+
 //traerRock();
 
 const hiphopButton = document.getElementById('hiphop');
