@@ -42,16 +42,23 @@ reggae: saturate(10%);
     list-style: none;
 }
 
+/* ---------------------------- Barra superior ---------------------------- */
+
 header {
     display: flex;
     justify-content: left;
+    width: 100%;
     padding: 1%;
     height: 5%;
     background-color: #483CBF
 }
 
-/* Menú Fotografías */
+header>img {
+    width: 13%;
+    min-width: 120px;
+}
 
+/* ---------------------------- Menú Generos ---------------------------- */
 
 .generos>ul {
 display: flex;
@@ -75,15 +82,26 @@ margin-top: 2%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 1.8em;
+    text-shadow: 2px 2px 5px black;
 }
 
-/* Menú Texto */
+.menu-gen>img {
+    filter: blur(1.5px);
+    transition: 1s;
+    width: 100%;
+    min-width: 100px;
+}
+
+.menu-gen>img:hover {
+    filter: none;
+}
+
+/* ---------------------------- Menú Texto ---------------------------- */
 
 .ul-menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30%;
     margin-top: 2.5rem;
     gap: 5rem;
     background-color: #483CBF;
@@ -92,7 +110,7 @@ margin-top: 2%;
     color: #a4ff38;
 }
 
-/* Estilos Listas */
+/* ---------------------------- Estilos Listas ---------------------------- */
 
 tr:nth-child(odd) {
     background-color: #cfff96;
