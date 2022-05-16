@@ -6,7 +6,7 @@
 
 const tabla = document.querySelector('.canciones');
 
-function traerMusica() {
+/*function traerMusica() {
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
@@ -26,21 +26,25 @@ function traerMusica() {
 }
 
 
-traerMusica();
+traerMusica();*/
 
-
+const rockButton = document.getElementById('rock');
+rockButton.onclick = traerRock;
                   
 function traerRock(){
+    
+    tabla.innerHTML="";
+
     fetch('music.json')
     .then (resp => resp.json())
     .then((music) => {
         const title = document.getElementById('title')
-        title.innerHTML += `
+        title.innerHTML = `
         ////Rock`
         const rockMusic = music.filter (item => item.genres.includes("rock"))
         rockMusic.map((cancion) => {
             const rock = document.createElement('tr');
-            rock.innerHTML += `
+            rock.innerHTML = `
             <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
             <td>${cancion.artist.name}</td>
             <td>${cancion.name}</td>
@@ -48,12 +52,12 @@ function traerRock(){
             tabla.appendChild(rock);
         })
     })
-}
+} 
 
-//const rockButton = 
-//rockButton.addEventListener("click", traerRock);
 
-traerRock();
+
+
+//traerRock();
 
 
 
