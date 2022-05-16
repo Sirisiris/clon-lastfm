@@ -6,7 +6,7 @@
 
 const tabla = document.querySelector('.canciones');
 
-/*function traerMusica() {
+function traerMusica() {
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
@@ -23,7 +23,7 @@ const tabla = document.querySelector('.canciones');
 
 
 traerMusica();
-*/
+
 
                   
 function traerRock(){
@@ -44,6 +44,85 @@ function traerRock(){
 }
 
 traerRock();
+
+
+
+// function traerHiphop(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const hiphopMusic = music.filter (item => item.genres.includes("Hip-Hop"))
+//         hiphopMusic.map((cancion) => {
+//             const hiphop = document.createElement('tr');
+//             hiphop.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(Hip-Hop);
+//         })
+//     })
+// }
+
+// traerHiphop();
+
+// function traerIndie(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const indiepMusic = music.filter (item => item.genres.includes("indie"))
+//         indieMusic.map((cancion) => {
+//             const indie = document.createElement('tr');
+//             indie.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(indie);
+//         })
+//     })
+// }
+
+
+// function traerJazz(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const jazzMusic = music.filter (item => item.genres.includes("jazz"))
+//         jazzMusic.map((cancion) => {
+//             const jazz = document.createElement('tr');
+//             indie.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(jazz);
+//         })
+//     })
+// }
+
+
+// function traerReggae(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const reggaeMusic = music.filter (item => item.genres.includes("jazz"))
+//         reggaeMusic.map((cancion) => {
+//             const reggae = document.createElement('tr');
+//             reggae.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(jazz);
+//         })
+//     })
+// }
+
+
+
+
+
 //let arrayRock = music.filter(item => item.genres.includes("rock"));
 
   //      function filtrarPorGenero()
