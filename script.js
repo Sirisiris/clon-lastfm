@@ -46,8 +46,9 @@ function traerRock(){
             const rock = document.createElement('tr');
             rock.innerHTML = `
             <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-            <td>${cancion.artist.name}</td>
-            <td>${cancion.name}</td>
+            <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+            <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+         
             <td>${cancion.listeners}</td>`;
             tabla.appendChild(rock);
         })
@@ -57,6 +58,35 @@ function traerRock(){
 // const hiphopButton = document.getElementById('hiphop');
 // hiphopButton.onclick = traerHiphop;
                   
+
+/*function traerRock(){
+    
+    tabla.innerHTML="";
+
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Rock`
+        const rockMusic = music.filter (item => item.genres.includes("rock"))
+        rockMusic.map((cancion) => {
+            const rock = document.createElement('tr');
+            rock.innerHTML = `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td>${cancion.artist.name}</td>
+            <td>${cancion.name}</td>
+            <td>${cancion.listeners}</td>`;
+            tabla.appendChild(rock);
+        })
+    })
+} 
+/* 
+//traerRock();
+
+const hiphopButton = document.getElementById('hiphop');
+hiphopButton.onclick = traerHiphop;
+
 // function traerHiphop(){
     
 //     tabla.innerHTML="";
