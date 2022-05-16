@@ -54,17 +54,19 @@ function traerRock(){
     })
 } 
 
-
-
-
-//traerRock();
-
-
-
+// const hiphopButton = document.getElementById('hiphop');
+// hiphopButton.onclick = traerHiphop;
+                  
 // function traerHiphop(){
+    
+//     tabla.innerHTML="";
+
 //     fetch('music.json')
 //     .then (resp => resp.json())
 //     .then((music) => {
+//         const title = document.getElementById('title')
+//         title.innerHTML = `
+//         ////Hip-Hop`
 //         const hiphopMusic = music.filter (item => item.genres.includes("Hip-Hop"))
 //         hiphopMusic.map((cancion) => {
 //             const hiphop = document.createElement('tr');
@@ -76,15 +78,23 @@ function traerRock(){
 //             tabla.appendChild(Hip-Hop);
 //         })
 //     })
-// }
+// } 
 
-// traerHiphop();
+
+// const indieButton = document.getElementById('indie');
+// indieButton.onclick = traerIndie;
 
 // function traerIndie(){
+
+//     tabla.innerHTML="";
+
 //     fetch('music.json')
 //     .then (resp => resp.json())
 //     .then((music) => {
-//         const indiepMusic = music.filter (item => item.genres.includes("indie"))
+//         const title = document.getElementById('title')
+//         title.innerHTML = `
+//         ////Indie`
+//         const indieMusic = music.filter (item => item.genres.includes("indie"))
 //         indieMusic.map((cancion) => {
 //             const indie = document.createElement('tr');
 //             indie.innerHTML += `
@@ -97,11 +107,19 @@ function traerRock(){
 //     })
 // }
 
+// const jazzButton = document.getElementById('jazz');
+// jazzButton.onclick = traerJazz;
 
 // function traerJazz(){
+
+//     tabla.innerHTML="";
+
 //     fetch('music.json')
 //     .then (resp => resp.json())
 //     .then((music) => {
+//         const title = document.getElementById('title')
+//         title.innerHTML = `
+//         ////Jazz`
 //         const jazzMusic = music.filter (item => item.genres.includes("jazz"))
 //         jazzMusic.map((cancion) => {
 //             const jazz = document.createElement('tr');
@@ -115,12 +133,20 @@ function traerRock(){
 //     })
 // }
 
+// const reggaeButton = document.getElementById('reggae');
+// reggaeButton.onclick = traerReggae;
 
 // function traerReggae(){
+
+//     tabla.innerHTML="";
+
 //     fetch('music.json')
 //     .then (resp => resp.json())
 //     .then((music) => {
-//         const reggaeMusic = music.filter (item => item.genres.includes("jazz"))
+//         const title = document.getElementById('title')
+//         title.innerHTML = `
+//         ////Reggae`
+//         const reggaeMusic = music.filter (item => item.genres.includes("reggae"))
 //         reggaeMusic.map((cancion) => {
 //             const reggae = document.createElement('tr');
 //             reggae.innerHTML += `
@@ -128,7 +154,7 @@ function traerRock(){
 //             <td>${cancion.name}</td>
 //             <td>${cancion.listeners}</td>
 //             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
-//             tabla.appendChild(jazz);
+//             tabla.appendChild(reggae);
 //         })
 //     })
 // }
