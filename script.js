@@ -6,7 +6,7 @@
 
 const tabla = document.querySelector('.canciones');
 
-/*function traerMusica() {
+function traerMusica() {
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
@@ -16,34 +16,119 @@ const tabla = document.querySelector('.canciones');
         <td>${music.artist.name}</td>
         <td>${music.name}</td>
         <td>${music.listeners}</td>
-        <td><a href="${music.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>`;
         tabla.appendChild(row);    });
 })
 }
 
 
 traerMusica();
-*/
+
 
                   
 function traerRock(){
     fetch('music.json')
     .then (resp => resp.json())
     .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML += `
+        ////Rock`
         const rockMusic = music.filter (item => item.genres.includes("rock"))
         rockMusic.map((cancion) => {
             const rock = document.createElement('tr');
             rock.innerHTML += `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
             <td>${cancion.artist.name}</td>
             <td>${cancion.name}</td>
-            <td>${cancion.listeners}</td>
-            <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+            <td>${cancion.listeners}</td>`;
             tabla.appendChild(rock);
         })
     })
 }
 
+//const rockButton = 
+//rockButton.addEventListener("click", traerRock);
+
 traerRock();
+
+
+
+// function traerHiphop(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const hiphopMusic = music.filter (item => item.genres.includes("Hip-Hop"))
+//         hiphopMusic.map((cancion) => {
+//             const hiphop = document.createElement('tr');
+//             hiphop.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(Hip-Hop);
+//         })
+//     })
+// }
+
+// traerHiphop();
+
+// function traerIndie(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const indiepMusic = music.filter (item => item.genres.includes("indie"))
+//         indieMusic.map((cancion) => {
+//             const indie = document.createElement('tr');
+//             indie.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(indie);
+//         })
+//     })
+// }
+
+
+// function traerJazz(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const jazzMusic = music.filter (item => item.genres.includes("jazz"))
+//         jazzMusic.map((cancion) => {
+//             const jazz = document.createElement('tr');
+//             indie.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(jazz);
+//         })
+//     })
+// }
+
+
+// function traerReggae(){
+//     fetch('music.json')
+//     .then (resp => resp.json())
+//     .then((music) => {
+//         const reggaeMusic = music.filter (item => item.genres.includes("jazz"))
+//         reggaeMusic.map((cancion) => {
+//             const reggae = document.createElement('tr');
+//             reggae.innerHTML += `
+//             <td>${cancion.artist.name}</td>
+//             <td>${cancion.name}</td>
+//             <td>${cancion.listeners}</td>
+//             <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+//             tabla.appendChild(jazz);
+//         })
+//     })
+// }
+
+
+
+
+
 //let arrayRock = music.filter(item => item.genres.includes("rock"));
 
   //      function filtrarPorGenero()
