@@ -10,13 +10,17 @@ function traerMusica() {
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
-    music.map((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML += `
+        ////Overview`
+        music.map((music) => {
         const row = document.createElement('tr');
         row.innerHTML += `
+        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
         <td>${music.artist.name}</td>
         <td>${music.name}</td>
         <td>${music.listeners}</td>
-        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>`;
+        `;
         tabla.appendChild(row);    });
 })
 }
