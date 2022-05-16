@@ -6,50 +6,32 @@
 
 const tabla = document.querySelector('.canciones');
 
-/*function traerMusica() {
+
+
+function traerMusica() {
+       
+    tabla.innerHTML="";
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
-        const title = document.getElementById('title')
-        title.innerHTML += `
+        const title = document.getElementById('title');
+        title.innerHTML = `
         ////Overview`
-        music.map((music) => {
+        music.map((cancion) => {
         const row = document.createElement('tr');
         row.innerHTML += `
-        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-        <td>${music.artist.name}</td>
-        <td>${music.name}</td>
-        <td>${music.listeners}</td>
-        `;
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+            <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+            <td>${cancion.listeners}</td>`;
         tabla.appendChild(row);    });
 })
 }
 
 
-traerMusica();*/
+const overviewButton = document.getElementById('overview');
+overviewButton.onclick = traerMusica; 
 
-// function traerTop10(){
-    
-//     tabla.innerHTML="";
-
-//     fetch('music.json')
-//     .then (resp => resp.json())
-//     .then((music) => {
-//         const title = document.getElementById('title')
-//         title.innerHTML = `
-//         ////top10`
-//         //const top10 = music.listeners.sort(function (a, b) { return b - a; }).slice(0, 9);
-//         top10.map((cancion) => {
-//             const top10 = document.createElement('tr');
-//           top10.innerHTML = `
-//             <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//             <td>${cancion.listeners}</td>`;
-//             top10.appendChild(top10);
-//         })
-//     })
-// } 
 
 const top10Button = document.getElementById('top10');
 // aqui hacemos click en el button, y el click llama a la funcion traerTop10
@@ -99,145 +81,146 @@ function traerTop10(){
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
             <td>${cancion.listeners}</td>`;
-            top10.appendChild(top10);
+            tabla.appendChild(top10);
         })
     })
 } 
 
 
-//const valoraciones = [1, 25, 52, 151, 121, 51, 12, 515, 77, 211, 997, 62, 1216, 11, 921];
+const rockButton = document.getElementById('rock');
+rockButton.onclick = traerRock;
 
-
-// const rockButton = document.getElementById('rock');
-// rockButton.onclick = traerRock;
-
-// function traerRock(){
+function traerRock(){
     
-//     tabla.innerHTML="";
-// fetch('music.json')
-// .then (resp => resp.json())
-// .then((music) => {
-//     const title = document.getElementById('title')
-//     title.innerHTML = `
-//     ////Rock`
-//     const rockMusic = music.filter (item => item.genres.includes("rock"))
-//     rockMusic.map((cancion) => {
-//         const rock = document.createElement('tr');
-//         rock.innerHTML = `
-//         <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//         <td>${cancion.listeners}</td>`;
-//         tabla.appendChild(rock);
-//     })
-// })
-// } 
+    tabla.innerHTML="";
+fetch('music.json')
+.then (resp => resp.json())
+.then((music) => {
+    const title = document.getElementById('title')
+    title.innerHTML = `
+    ////Rock`
+    const rockMusic = music.filter (item => item.genres.includes("rock"))
+    rockMusic.map((cancion) => {
+        const rock = document.createElement('tr');
+        rock.innerHTML = `
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(rock);
+    })
+})
+} 
 
-// const hiphopButton = document.getElementById('hiphop');
-// hiphopButton.onclick = traerHiphop;
+const hiphopButton = document.getElementById('hiphop');
+hiphopButton.onclick = traerHiphop;
 
-// function traerHiphop(){
+function traerHiphop(){
     
-//     tabla.innerHTML="";
+    tabla.innerHTML="";
 
-//     fetch('music.json')
-//     .then (resp => resp.json())
-//     .then((music) => {
-//         const title = document.getElementById('title')
-//         title.innerHTML = `
-//         ////Hip-Hop`
-//         const hiphopMusic = music.filter (item => item.genres.includes("Hip-Hop"))
-//         hiphopMusic.map((cancion) => {
-//             const hiphop = document.createElement('tr');
-//             hiphop.innerHTML += `
-//             <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//         <td>${cancion.listeners}</td>`;
-//             tabla.appendChild(hiphop);
-//         })
-//     })
-// } 
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Hip-Hop`
+        const hiphopMusic = music.filter (item => item.genres.includes("Hip-Hop"))
+        hiphopMusic.map((cancion) => {
+            const hiphop = document.createElement('tr');
+            hiphop.innerHTML += `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+            tabla.appendChild(hiphop);
+        })
+    })
+} 
 
 
-// const indieButton = document.getElementById('indie');
-// indieButton.onclick = traerIndie;
+const indieButton = document.getElementById('indie');
+indieButton.onclick = traerIndie;
 
-// function traerIndie(){
+function traerIndie(){
 
-//     tabla.innerHTML="";
+    tabla.innerHTML="";
 
-//     fetch('music.json')
-//     .then (resp => resp.json())
-//     .then((music) => {
-//         const title = document.getElementById('title')
-//         title.innerHTML = `
-//         ////Indie`
-//         const indieMusic = music.filter (item => item.genres.includes("indie"))
-//         indieMusic.map((cancion) => {
-//          const indie = document.createElement('tr');
-//          indie.innerHTML += `
-//          <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//          <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//          <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//          <td>${cancion.listeners}</td>`;
-//          tabla.appendChild(indie);
-//          })
-//     })
-// }
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Indie`
+        const indieMusic = music.filter (item => item.genres.includes("indie"))
+        indieMusic.map((cancion) => {
+         const indie = document.createElement('tr');
+         indie.innerHTML += `
+         <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+         <td>${cancion.listeners}</td>`;
+         tabla.appendChild(indie);
+         })
+    })
+}
 
-// const jazzButton = document.getElementById('jazz');
-// jazzButton.onclick = traerJazz;
+const jazzButton = document.getElementById('jazz');
+jazzButton.onclick = traerJazz;
 
-// function traerJazz(){
+function traerJazz(){
+    
+    tabla.innerHTML="";
 
-//     tabla.innerHTML="";
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Jazz`
+        const jazzMusic = music.filter (item => item.genres.includes("jazz"))
+        jazzMusic.map((cancion) => {
+        const jazz = document.createElement('tr');
+        jazz.innerHTML += `
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(jazz);
+        })
+    })
+}
 
-//     fetch('music.json')
-//     .then (resp => resp.json())
-//     .then((music) => {
-//         const title = document.getElementById('title')
-//         title.innerHTML = `
-//         ////Jazz`
-//         const jazzMusic = music.filter (item => item.genres.includes("jazz"))
-//         jazzMusic.map((cancion) => {
-//         const jazz = document.createElement('tr');
-//         indie.innerHTML += `
-//         <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//         <td>${cancion.listeners}</td>`;
-//         tabla.appendChild(jazz);
-//         })
-//     })
-// }
+const reggaeButton = document.getElementById('reggae');
+reggaeButton.onclick = traerReggae;
 
-// const reggaeButton = document.getElementById('reggae');
-// reggaeButton.onclick = traerReggae;
+function traerReggae(){
 
-// function traerReggae(){
+    tabla.innerHTML="";
 
-//     tabla.innerHTML="";
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Reggae`
+        const reggaeMusic = music.filter (item => item.genres.includes("reggae"))
+        reggaeMusic.map((cancion) => {
+        const reggae = document.createElement('tr');
+        reggae.innerHTML += `
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(reggae);
+        })
+     })
+}
 
-//     fetch('music.json')
-//     .then (resp => resp.json())
-//     .then((music) => {
-//         const title = document.getElementById('title')
-//         title.innerHTML = `
-//         ////Reggae`
-//         const reggaeMusic = music.filter (item => item.genres.includes("reggae"))
-//         reggaeMusic.map((cancion) => {
-//         const reggae = document.createElement('tr');
-//         reggae.innerHTML += `
-//         <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-//         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-//         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-//         <td>${cancion.listeners}</td>`;
-//         tabla.appendChild(reggae);
-//         })
-//      })
-// }
 
+window.onload = function(e){ 
+    traerMusica();
+}
 //AGREGUE UN REGGAE UN LA LINEA 729 DE JSON PARA SESTEAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
