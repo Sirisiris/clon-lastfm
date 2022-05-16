@@ -16,7 +16,7 @@ function traerMusica() {
         <td>${music.artist.name}</td>
         <td>${music.name}</td>
         <td>${music.listeners}</td>
-        <td><a href="${music.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>`;
         tabla.appendChild(row);    });
 })
 }
@@ -30,18 +30,24 @@ function traerRock(){
     fetch('music.json')
     .then (resp => resp.json())
     .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML += `
+        ////Rock`
         const rockMusic = music.filter (item => item.genres.includes("rock"))
         rockMusic.map((cancion) => {
             const rock = document.createElement('tr');
             rock.innerHTML += `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
             <td>${cancion.artist.name}</td>
             <td>${cancion.name}</td>
-            <td>${cancion.listeners}</td>
-            <td><a href="${cancion.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
+            <td>${cancion.listeners}</td>`;
             tabla.appendChild(rock);
         })
     })
 }
+
+//const rockButton = 
+//rockButton.addEventListener("click", traerRock);
 
 traerRock();
 
