@@ -3,6 +3,52 @@
 
 //MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+const tabla = document.querySelector('.canciones');
+
+/*function traerMusica() {
+    fetch('music.json')
+    .then(response => response.json())
+    .then ((music) => {
+    music.map((music) => {
+        const row = document.createElement('tr');
+        row.innerHTML += `
+        <td>${music.artist.name}</td>
+        <td>${music.name}</td>
+        <td>${music.listeners}</td>
+        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>`;
+        tabla.appendChild(row);    });
+})
+}
+
+
+traerMusica();
+*/
+
+                  
+function traerRock(){
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const rockMusic = music.filter (item => item.genres.includes("rock"))
+        rockMusic.map((cancion) => {
+            const rock = document.createElement('tr');
+            rock.innerHTML += `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td>${cancion.artist.name}</td>
+            <td>${cancion.name}</td>
+            <td>${cancion.listeners}</td>`;
+            tabla.appendChild(rock);
+        })
+    })
+}
+
+traerRock();
+//let arrayRock = music.filter(item => item.genres.includes("rock"));
+
+  //      function filtrarPorGenero()
+
+  
 /*class Song {
     constructor(){
     }
@@ -139,29 +185,3 @@ function cargarLista(){
      })}
      
      */
-
-const tabla = document.querySelector('.canciones');
-
-function traerMusica() {
-    fetch('music.json')
-    .then(response => response.json())
-    .then ((music) => {
-    music.map((music) => {
-        const row = document.createElement('tr');
-        row.innerHTML += `
-        <td>${music.artist.name}</td>
-        <td>${music.name}</td>
-        <td>${music.listeners}</td>
-        <td><a href="${music.url}" target="_blank"><img src="images/song.svg" alt="song" height="35" width="35"></a></td>`;
-        tabla.appendChild(row);    });
-})
-}
-
-traerMusica();
-
-/*
-{artista: music.artist.name,
-    songname: music.name,
-    listeners: music.listeners
-    }
-    */
