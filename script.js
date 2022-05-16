@@ -30,6 +30,9 @@ function traerRock(){
     fetch('music.json')
     .then (resp => resp.json())
     .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML += `
+        ////Rock`
         const rockMusic = music.filter (item => item.genres.includes("rock"))
         rockMusic.map((cancion) => {
             const rock = document.createElement('tr');
@@ -42,6 +45,9 @@ function traerRock(){
         })
     })
 }
+
+//const rockButton = 
+//rockButton.addEventListener("click", traerRock);
 
 traerRock();
 //let arrayRock = music.filter(item => item.genres.includes("rock"));
