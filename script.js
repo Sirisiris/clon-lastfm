@@ -28,7 +28,7 @@ const tabla = document.querySelector('.canciones');
 
 traerMusica();*/
 
-const top10Button = document.getElementById('top10');
+/*const top10Button = document.getElementById('top10');
 top10Button.onclick = traerTop10;
                   
 function traerTop10(){
@@ -52,7 +52,61 @@ function traerTop10(){
             top10.appendChild(top10);
         })
     })
+} */
+
+const top10Button = document.getElementById('top10');
+// aqui hacemos click en el button, y el click llama a la funcion traerTop10
+top10Button.onclick = traerTop10;
+                  
+function traerTop10(){
+    // caja donde vamos a meter las canciones
+    tabla.innerHTML="";
+
+    // pasamos al fetch donde tiene que buscar la informacion
+    fetch('music.json')
+    // formatear la respuesta a json
+    .then (resp => resp.json())
+    .then((music) => {
+        // music -> todas las canciones
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////top10`
+        //const top10 = music.listeners.sort(function (a, b) { return b - a; }).slice(0, 9);
+        const rockMusic = music.filter (item => item.genres.includes("rock"))
+        const orden = rockMusic.sort(function (a, b) {
+            if (Number(a.listeners) < Number(b.listeners)) {
+              return 1;
+            }
+            if (Number(a.listeners) > Number(b.listeners)) {
+              return -1;
+            }
+            // a must be equal to b
+            return 0;
+          });
+        const top10songs = orden.slice(0, 9)
+        for (let i = 0; i < 9; i++) {
+            const top10 = document.createElement('tr');
+            cancion = top10songs[i]
+          top10.innerHTML = `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+            <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+            <td>${cancion.listeners}</td>`;
+            tabla.appendChild(top10);
+          }
+
+        orden.slice(0, 9).map((cancion) => {
+            const top10 = document.createElement('tr');
+          top10.innerHTML = `
+            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+            <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+            <td>${cancion.listeners}</td>`;
+            top10.appendChild(top10);
+        })
+    })
 } 
+
 
 // const hiphopButton = document.getElementById('hiphop');
 // hiphopButton.onclick = traerHiphop;
