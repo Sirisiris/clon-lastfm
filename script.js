@@ -6,7 +6,12 @@
 
 const tabla = document.querySelector('.canciones');
 
-/*function traerMusica() {
+//window.onload=traerMusica();
+const overviewButton = document.getElementById('overview');
+overviewButton.onclick = traerMusica(); 
+
+function traerMusica() {
+    tabla.innerHTML="";
     fetch('music.json')
     .then(response => response.json())
     .then ((music) => {
@@ -16,17 +21,17 @@ const tabla = document.querySelector('.canciones');
         music.map((music) => {
         const row = document.createElement('tr');
         row.innerHTML += `
-        <td><a href="${music.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
-        <td>${music.artist.name}</td>
-        <td>${music.name}</td>
-        <td>${music.listeners}</td>
-        `;
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+            <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+            <td>${cancion.listeners}</td>`;
         tabla.appendChild(row);    });
 })
 }
 
 
-traerMusica();*/
+
+
 
 /*const top10Button = document.getElementById('top10');
 top10Button.onclick = traerTop10;
