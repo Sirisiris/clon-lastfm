@@ -117,9 +117,10 @@ function traerTop10(){
 
 
 //const valoraciones = [1, 25, 52, 151, 121, 51, 12, 515, 77, 211, 997, 62, 1216, 11, 921];
-/*
+
 const rockButton = document.getElementById('rock');
 rockButton.onclick = traerRock;
+
 function traerRock(){
     
     tabla.innerHTML="";
