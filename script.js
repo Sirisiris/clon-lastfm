@@ -213,10 +213,38 @@ function traerReggae(){
      })
 }
 
+const biggestButton = document.getElementById('biggest');
+biggestButton.onclick = traerBiggest;
+
+function traerBiggest(){
+
+    tabla.innerHTML="";
+
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////The Biggest`
+        const biggestMusic = music.filter (item => item.artist.name.includes("Radiohead"))
+        biggestMusic.map((cancion) => {
+        const biggest = document.createElement('tr');
+        biggest.innerHTML += `
+        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(biggest);
+        })
+     })
+}
+
 
 window.onload = function(e){ 
     traerMusica();
 }
+
+
 //AGREGUE UN REGGAE UN LA LINEA 729 DE JSON PARA SESTEAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
