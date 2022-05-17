@@ -149,6 +149,15 @@ tr:nth-child(odd) {
     text-align: center;
   }
 
+  a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: 900;
+}
+
   .canciones{
       padding-left: 5%;
       padding-right: 5%;
