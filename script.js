@@ -46,10 +46,9 @@ function traerTop10(){
         // music -> todas las canciones
         const title = document.getElementById('title')
         title.innerHTML = `
-        ////top10`
+        ////Top10`
         //const top10 = music.listeners.sort(function (a, b) { return b - a; }).slice(0, 9);
-        const rockMusic = music.filter (item => item.genres.includes("rock"))
-        const orden = rockMusic.sort(function (a, b) {
+        const orden = music.sort(function (a, b) {
             if (Number(a.listeners) < Number(b.listeners)) {
               return 1;
             }
