@@ -1,39 +1,3 @@
-/* Colores:
-   --color-primary:  #222
-   --color-secondary: rgba(110, 69, 51, 1);
-   --color-focus-menu: #B90000;
-   --color-background: #fff;
-   --color-list-odd: #f2f2f2;
-
-*/
-
-/* Imágenes:
-logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
-rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
-hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
-indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
-jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
-reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
-*/
-
-/* Filtros:
-
-rock:   sepia(90%);
-hip-hop:contrast(200%);
-indie:  grayscale(50%);
-jazz:   hue-rotate(90deg);
-reggae: saturate(10%);
-
-*/
-
-/* Fuente:
-    font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
-
-*/
-
-/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
- */
-
 * {
     margin: 0;
     padding: 0;
@@ -82,7 +46,8 @@ margin-top: 2%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 1.8em;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 0 0 0.2em black, 0 0 0.2em black,
+		0 0 0.2em black;
 }
 
 .gen-txt:hover{
@@ -92,6 +57,7 @@ margin-top: 2%;
 .menu-gen>img {
     width: 100%;
     min-width: 100px;
+    transition: 1s;
 }
 
 .menu-gen>img:hover {
@@ -141,28 +107,13 @@ tr:nth-child(odd) {
     width: 80%;
   }
 
-  h3{
-    font-size: 2.188rem;
+  #title{
+    font-size: 2.8rem;
     font-style: italic;
     text-decoration: underline;
-    margin: 1rem 0 1rem 0;
+    text-underline-offset: 0.1em;
+    margin: 2rem 0 2rem 0;
     text-align: center;
-  }
-
-  a:link, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    font-weight: 900;
-}
-
-  .canciones{
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-top: 2%;
-      margin: 0 auto;
   }
 
   tr td a img{
@@ -172,3 +123,28 @@ a:hover {
     text-align: center;
     position: relative;
 }   
+
+.canciones{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    margin: 0 auto;
+}
+
+.canciones>tr>td>a>img:hover {
+    animation: spin 8s infinite linear;
+}
+     @keyframes spin {
+         0% { transform: rotate(0)}
+         50% {transform: rotate(360deg)}
+         100% {transform: rotate(720deg)}
+     }
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: 900;
+}
