@@ -17,7 +17,7 @@ function traerMusica() {
         music.map((cancion) => {
         const row = document.createElement('tr');
         row.innerHTML += `
-        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
             <td>${cancion.listeners}</td>`;
@@ -63,7 +63,7 @@ function traerTop10(){
             const top10 = document.createElement('tr');
             cancion = top10songs[i]
           top10.innerHTML = `
-            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
             <td>${cancion.listeners}</td>`;
@@ -73,7 +73,7 @@ function traerTop10(){
         orden.slice(0, 9).map((cancion) => {
             const top10 = document.createElement('tr');
           top10.innerHTML = `
-            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
             <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
             <td>${cancion.listeners}</td>`;
@@ -99,7 +99,7 @@ fetch('music.json')
     rockMusic.map((cancion) => {
         const rock = document.createElement('tr');
         rock.innerHTML = `
-        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
         <td>${cancion.listeners}</td>`;
@@ -124,7 +124,7 @@ function traerHiphop(){
         hiphopMusic.map((cancion) => {
             const hiphop = document.createElement('tr');
             hiphop.innerHTML += `
-            <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+            <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
         <td>${cancion.listeners}</td>`;
@@ -151,7 +151,7 @@ function traerIndie(){
         indieMusic.map((cancion) => {
          const indie = document.createElement('tr');
          indie.innerHTML += `
-         <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+         <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
          <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
          <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
          <td>${cancion.listeners}</td>`;
@@ -177,7 +177,7 @@ function traerJazz(){
         jazzMusic.map((cancion) => {
         const jazz = document.createElement('tr');
         jazz.innerHTML += `
-        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
         <td>${cancion.listeners}</td>`;
@@ -203,7 +203,7 @@ function traerReggae(){
         reggaeMusic.map((cancion) => {
         const reggae = document.createElement('tr');
         reggae.innerHTML += `
-        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
         <td>${cancion.listeners}</td>`;
@@ -229,7 +229,7 @@ function traerBiggest(){
         biggestMusic.map((cancion) => {
         const biggest = document.createElement('tr');
         biggest.innerHTML += `
-        <td><a href="${cancion.url}" target="_blank"><img src="./images/icon.png" alt="song" height="35" width="35"></a></td>
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
         <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
         <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
         <td>${cancion.listeners}</td>`;

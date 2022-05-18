@@ -67,6 +67,10 @@ margin-top: 2%;
 
 /* ---------------------------- Menú Texto ---------------------------- */
 
+.menu {
+    width: 100%;
+}
+
 .ul-menu {
     display: flex;
     justify-content: center;
@@ -74,8 +78,6 @@ margin-top: 2%;
     margin-top: 2.5rem;
     gap: 5rem;
     background-color: #483CBF;
-    margin-right: 20%;
-    margin-left: 20%;
     color: #a4ff38;
 }
 
@@ -116,10 +118,10 @@ tr:nth-child(odd) {
     text-align: center;
   }
 
-  tr td a img{
+  tr td img{
     border-radius: 1rem;
     margin: 0 2rem 0 2rem;
-    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
     text-align: center;
     position: relative;
 }   
@@ -131,7 +133,7 @@ tr:nth-child(odd) {
     margin: 0 auto;
 }
 
-.canciones>tr>td>a>img:hover {
+.canciones>tr>td>img:hover {
     animation: spin 8s infinite linear;
 }
      @keyframes spin {
