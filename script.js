@@ -1,9 +1,10 @@
 //MADA LA MAS LINDA DE TODAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// --------------------- Vinculación de la tabla con el div canciones ----------------
 
 const tabla = document.querySelector('.canciones');
 
-
+// ---------------------- Cargar todas las canciones - Overview ---------------------- 
 
 function traerMusica() {
        
@@ -25,25 +26,20 @@ function traerMusica() {
 })
 }
 
-
+// Vinculación y llamada al boton Overview
 const overviewButton = document.getElementById('overview');
 overviewButton.onclick = traerMusica; 
 
+// ---------------------- Sección TOP 10 ---------------------- 
 
 const top10Button = document.getElementById('top10');
-// aqui hacemos click en el button, y el click llama a la funcion traerTop10
 top10Button.onclick = traerTop10;
                   
 function traerTop10(){
-    // caja donde vamos a meter las canciones
     tabla.innerHTML="";
-
-    // pasamos al fetch donde tiene que buscar la informacion
     fetch('music.json')
-    // formatear la respuesta a json
     .then (resp => resp.json())
     .then((music) => {
-        // music -> todas las canciones
         const title = document.getElementById('title')
         title.innerHTML = `
         ////Top10`
@@ -55,13 +51,12 @@ function traerTop10(){
             if (Number(a.listeners) > Number(b.listeners)) {
               return -1;
             }
-            // a must be equal to b
             return 0;
           });
         const top10songs = orden.slice(0, 9)
         for (let i = 0; i < 9; i++) {
             const top10 = document.createElement('tr');
-            cancion = top10songs[i]
+            const cancion = top10songs[i]
           top10.innerHTML = `
             <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
             <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
@@ -82,7 +77,9 @@ function traerTop10(){
     })
 } 
 
+// ---------------------- Sección ROCK ---------------------- 
 
+// Llamada al botón y cargar función
 const rockButton = document.getElementById('rock');
 rockButton.onclick = traerRock;
 
@@ -107,6 +104,9 @@ fetch('music.json')
     })
 })
 }
+
+// ---------------------- Sección HipHop ---------------------- 
+
 const hiphopButton = document.getElementById('hiphop');
 hiphopButton.onclick = traerHiphop;
 
@@ -133,6 +133,7 @@ function traerHiphop(){
     })
 } 
 
+//---------------------- Sección Indie ---------------------- 
 
 const indieButton = document.getElementById('indie');
 indieButton.onclick = traerIndie;
@@ -160,57 +161,8 @@ function traerIndie(){
     })
 }
 
-const jazzButton = document.getElementById('jazz');
-jazzButton.onclick = traerJazz;
 
-function traerJazz(){
-    
-    tabla.innerHTML="";
-
-    fetch('music.json')
-    .then (resp => resp.json())
-    .then((music) => {
-        const title = document.getElementById('title')
-        title.innerHTML = `
-        ////Jazz`
-        const jazzMusic = music.filter (item => item.genres.includes("jazz"))
-        jazzMusic.map((cancion) => {
-        const jazz = document.createElement('tr');
-        jazz.innerHTML += `
-        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
-        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-        <td>${cancion.listeners}</td>`;
-        tabla.appendChild(jazz);
-        })
-    })
-}
-
-const reggaeButton = document.getElementById('reggae');
-reggaeButton.onclick = traerReggae;
-
-function traerReggae(){
-
-    tabla.innerHTML="";
-
-    fetch('music.json')
-    .then (resp => resp.json())
-    .then((music) => {
-        const title = document.getElementById('title')
-        title.innerHTML = `
-        ////Reggae`
-        const reggaeMusic = music.filter (item => item.genres.includes("reggae"))
-        reggaeMusic.map((cancion) => {
-        const reggae = document.createElement('tr');
-        reggae.innerHTML += `
-        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
-        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
-        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
-        <td>${cancion.listeners}</td>`;
-        tabla.appendChild(reggae);
-        })
-     })
-}
+//---------------------- Sección Biggest ---------------------- 
 
 const biggestButton = document.getElementById('biggest');
 biggestButton.onclick = traerBiggest;
@@ -238,153 +190,65 @@ function traerBiggest(){
      })
 }
 
+//---------------------- Sección JAZZ ---------------------- 
+
+const jazzButton = document.getElementById('jazz');
+jazzButton.onclick = traerJazz;
+
+function traerJazz(){
+    
+    tabla.innerHTML="";
+
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Jazz`
+        const jazzMusic = music.filter (item => item.genres.includes("jazz"))
+        jazzMusic.map((cancion) => {
+        const jazz = document.createElement('tr');
+        jazz.innerHTML += `
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(jazz);
+        })
+    })
+}
+
+//---------------------- Sección Reggae ---------------------- 
+
+const reggaeButton = document.getElementById('reggae');
+reggaeButton.onclick = traerReggae;
+
+function traerReggae(){
+
+    tabla.innerHTML="";
+
+    fetch('music.json')
+    .then (resp => resp.json())
+    .then((music) => {
+        const title = document.getElementById('title')
+        title.innerHTML = `
+        ////Reggae`
+        const reggaeMusic = music.filter (item => item.genres.includes("reggae"))
+        reggaeMusic.map((cancion) => {
+        const reggae = document.createElement('tr');
+        reggae.innerHTML += `
+        <td><img src="./images/icon.png" alt="song" height="35" width="35"></td>
+        <td><a href="${cancion.artist.url}" target="_blank">${cancion.artist.name}</a></td>
+        <td><a href="${cancion.url}" target="_blank">${cancion.name}</a></td>
+        <td>${cancion.listeners}</td>`;
+        tabla.appendChild(reggae);
+        })
+     })
+}
+
+
+// ---------------------- Cargar Overview al iniciar la página ---------------------- 
 
 window.onload = function(e){ 
     traerMusica();
 }
-
-
-//AGREGUE UN REGGAE UN LA LINEA 729 DE JSON PARA SESTEAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-//let arrayRock = music.filter(item => item.genres.includes("rock"));
-
-  //      function filtrarPorGenero()
-
-  
-/*class Song {
-    constructor(){
-    }
-    setItemLi(){
-    }
-    setItemGroupName(group,url){
-    }
-    setItemSongTitle(title){
-    }
-    setListeners(listeners){
-    }
-    getNewElement(group,url,title,listeners){
-    }
-
-}
-initSongArray = async () => {
-    const {tracks} = await getTopTracks();
-
-    const arrayTracks = tracks.track.map(async (track) =>{
-       const info = await  getInfoTrack(track.name,track.artist.name)
-    //  console.log(info.track.toptags.tag)
-       track.genres = info.track.toptags.tag.map(e => e.name);
-       console.log(track);
-       return track;
-    })
-
-    const fullTracks = await Promise.all(arrayTracks)
-
-    return fullTracks;
-}
-const loadSongs = (tracks)=>{
-    // const ul = document.querySelector('ul');
-    // tracks.forEach(track => {
-    //     const li = document.createElement('li');
-    //     li.innerHTML=
-    //     `<span>${track.name}</span>
-    //     <a class="group-name" title="Play song" href=${track.url} target=_blank>play</a>
-    //     <span>${track.listeners}</span><span>${JSON.stringify(track.genres)}</span>`
-
-    //     ul.appendChild(li);
-    document.write(JSON.stringify(tracks))
-
-    // });
-
-}
-const loadOverview = () =>{
-}
-
-const loadTenListened = ()=>{
-
-}
-
-const loadBiggest = (e)=>{
-
-}
-
-const init = async ()=>{
-
-
-    // const {tracks} = await getTopTracks();
-    const tracks = await initSongArray();
-    console.log(tracks);
-    loadSongs(tracks);
-    // console.log(tracks.track);
-
-    }
-window.onload = init;*/
-
-/*const musicContainer = document.querySelector('.canciones')
-function fetch(name){
-    fetch(./music.json${name})
-    .then(response => response.json())
-    .then(data => imprimirData(data));
-}
-function fetchCancion(name) {
-    for (let i = 1; i <= name; i++) {
-        fetch(i);
-    }
-}
-function imprimirData(name){
-    const card = document.createElement('p');
-card.classList.add('name');
-
-}
-/*const url ='./music.json/'
-fetch(url)
-.then(Response => Response.json())
-.then(data => {
-let element = document.getElementById('canciones')
-element .innerHTML= `
-<p>${data.name}</p>`;
-console.log(data)
-})*/
-
-/* Lo que consume la API*/
-/*
-const canciones = document.querySelector('.canciones');
-
-fetch('music.json')
-.then(Response => Response.json())
-.then(data => console.log(data))
-*/
-
-/*Story 4 cuando clico*/
-
-/*let rock = document.querySelector(".rock")
-rock.addEventListener("click",listaRock); 
-
-function listaRock (){
-    fetch("music.json")
-    .then (res => res.json())
-    .then (function(data){
-     let html ="";
-     let rockArray = data.filter(song => song.genders.incl)
-     rockArray.forEach(song => {
-     html += <li><img src="./"</li>   
-    });
-    document.querySelector(".songs").innerHTML=html;
-    });   
-};*/
-
-/*
-function cargarLista(){
-    fetch('music.json')
-     .then(res => res.json())
-     .then(function(data){
-         //Aqui dentro tienes que hacer un for y decirle que tiene que hacer con cada uno de los objetos del array. Tienes que hacer que cree un <li> dentro de una <ol> por cada uo de los objetos del array( el array es data) 
-    for (let i = 0; i < array.length; i++) {
-         data.map ((data)=> ({name:data.name, duration: data.duration}));
-        
-        
-    }     
-     })}
-     
-     */
